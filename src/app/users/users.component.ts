@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
-
+import { USERS } from '../mock-users';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -14,6 +14,12 @@ export class UsersComponent implements OnInit {
     password_confirmation: 'hunter96',
     name: 'Windstorm'
   };
+  users = USERS;
+  selectedUser: User;
+
+  onSelect(user: User): void {
+    this.selectedUser = user;
+  }
   constructor() { }
 
   ngOnInit() {

@@ -1,22 +1,20 @@
-<h2>{{ user.name | uppercase}} Details</h2>
-<div><span>id: </span>{{user.id}}</div>
-<div>
-  <label>name:
-    <input [(ngModel)]="user.name" placeholder="name">
-  </label>
-</div>
-<div>
-  <label>email:
-    <input [(ngModel)]="user.email" placeholder="email">
-  </label>
-</div>
-<div>
-  <label>password:
-    <input [(ngModel)]="user.password" placeholder="password">
-  </label>
-</div>
-<div>
-  <label>password_confirmation:
-    <input [(ngModel)]="user.password_confirmation" placeholder="password_confirmation">
-  </label>
+<h2> Users </h2>
+<ul class="users">
+  <li *ngFor="let user of users"
+      [class.selected]="user === selectedUser"
+      (click)="onSelect(user)">
+    <span class="badge">{{user.id}}</span> {{user.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedUser">
+
+  <h2>{{ selectedUser.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{selectedUser.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedUser.name" placeholder="name">
+    </label>
+  </div>
+
 </div>

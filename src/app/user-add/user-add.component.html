@@ -1,0 +1,28 @@
+<form (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label class="col-xs-4 control-label" for="">User name: </label>
+    <div class="col-xs-8">
+      <input type="text" style="width: 300px" class="form-control" required
+             [(ngModel)]="user.name" name="userName">
+    </div>
+    <label class="col-xs-4 control-label" for="">User email: </label>
+    <div class="col-xs-8">
+      <input type="text" style="width: 300px" class="form-control" required
+             [(ngModel)]="user.email" name="userEmail">
+    </div>
+    <label class="col-xs-4 control-label" for="">Password: </label>
+    <div class="col-xs-8">
+      <input type="text" style="width: 300px" class="form-control" required
+             [(ngModel)]="user.password" name="userPassword">
+    </div>
+    <label class="col-xs-4 control-label" for="">Password Confirmation: </label>
+    <div class="col-xs-8">
+      <input type="text" style="width: 300px" class="form-control" required
+             [(ngModel)]="user.password_confirmation" name="userPasswordConfirmation">
+    </div>
+    <div>
+      <input type="submit" value="Create" />
+    </div>
+  </div>
+</form>

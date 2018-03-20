@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ApiService {
-  API_URL: string = "https://photography-back.herokuapp.com/api";
+  API_URL: string = "https://photography-back.herokuapp.com/api/";
 
   constructor(public http: HttpClient) { }
   public get(path) {

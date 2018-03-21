@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ApiService {
   // API_URL: string = "http://localhost:3000/api/";
-  API_URL: string = "https://photography-front.herokuapp.com/api/";
+  API_URL: string = "https://photography-back.herokuapp.com/api/";
   constructor(public http: HttpClient) { }
   public get(path) {
 

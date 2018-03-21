@@ -25,14 +25,14 @@ export class UserAddComponent implements OnInit {
     });
   }
   public onSubmit() {
-    console.log('Adding a user: ' + this.user.name);
+    console.log('Adding a user: ' + this.user);
     if (this.user.id) {
       this.apiService.update('users/' + this.user.id, this.user).subscribe((r) => {
         console.log(r);
         alert('User updated !');
       });
     } else {
-      this.apiService.post('users', this.user).subscribe((r) => {
+      this.apiService.post('users', {user: this.user}).subscribe((r) => {
         console.log(r);
         this.user = new User();
         alert('User added !');
